@@ -30,6 +30,18 @@ android {
     }
 }
 
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            aar(MavenPublication) {
+                //...
+                artifact bundleReleaseAar
+            }
+        }
+    }
+}
+
 dependencies {
 
     testImplementation 'junit:junit:4.13.2'

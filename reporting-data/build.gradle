@@ -30,6 +30,18 @@ android {
     }
 }
 
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            aar(MavenPublication) {
+                //...
+                artifact bundleReleaseAar
+            }
+        }
+    }
+}
+
 dependencies {
 
     implementation project(":reporting-domain")
